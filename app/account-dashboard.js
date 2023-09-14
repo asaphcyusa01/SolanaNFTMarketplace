@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import {
   BitpieWalletAdapter,
   PhantomWalletAdapter,
-} from '@solana/wallet-adapter-bitpie'; // Replace with your Solana wallet adapters
+} from '@solana/wallet-adapter-bitpie'; 
 import './dashboard.css';
 
 const AccountDashboard = () => {
@@ -26,7 +26,7 @@ const AccountDashboard = () => {
     setLoading(true);
     try {
       if (connectedWallet) {
-        // Replace with real data fetching
+        
         const sampleNFTs = [
           { name: 'NFT 1', id: 1 },
           { name: 'NFT 2', id: 2 },
