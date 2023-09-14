@@ -2,15 +2,20 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { Bounty } from "../target/types/bounty";
 
-describe("bounty", () => {
-  // Configure the client to use the local cluster.
-  anchor.setProvider(anchor.AnchorProvider.env());
+describe("Bounty Program", () => {
+  anchor.setProvider(anchor.Provider.env());
 
-  const program = anchor.workspace.Bounty as Program<Bounty>;
+  let program: Program<Bounty>;
 
-  it("Is initialized!", async () => {
-    // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
+  before(async () => {
+    program = anchor.workspace.Bounty as Program<Bounty>;
   });
+
+  it("Should initialize correctly", async () => {
+    const tx = await program.rpc.initialize();
+    const state = await program.state.fetch();
+
+    assert.ok(state.isInitialized === true);
+  });
+
 });
