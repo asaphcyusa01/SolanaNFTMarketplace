@@ -1,12 +1,29 @@
-// Migrations are an early feature. Currently, they're nothing more than this
-// single deploy script that's invoked from the CLI, injecting a provider
-// configured from the workspace's Anchor.toml.
+const anchor = require("@project-serum/anchor");
 
-const anchor = require("@coral-xyz/anchor");
+async function main() {
+  const provider = anchor.Provider.local(); 
 
-module.exports = async function (provider) {
-  // Configure client to use the provider.
-  anchor.setProvider(provider);
 
-  // Add your deploy script here.
-};
+  const idl = anchor.Program.defaultIdl();
+  const program = new anchor.Program(idl, programId, provider);
+
+  const programId = new anchor.web3.PublicKey("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+  const programPath = "./projects/bounty/programs/bounty/NFT.rs"; 
+  const programPath = "./projects/bounty/programs/bounty/Market.rs";
+  const programAccount = anchor.web3.Keypair.generate();
+  await program.rpc.initialize({
+    accounts: {
+      programAccount: programAccount.publicKey,
+      systemProgram: anchor.web3.SystemProgram.programId,
+    },
+    signers: [programAccount],
+  });
+
+  console.log("Program deployed to:", programId.toBase58());
+
+  console.log("Deployment completed successfully!");
+}
+
+main().catch((err) => {
+  console.error(err);
+});
