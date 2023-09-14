@@ -1,22 +1,37 @@
-import { WalletProvider } from '@solana/wallet-adapter-react'; // Import your Solana wallet provider
-import { ConnectionProvider } from '@solana/wallet-adapter-react/node_modules/@solana/wallet-adapter-react'; // Import the ConnectionProvider from your wallet provider
-import Wallet from '../components/Wallet'; // Import your wallet component
+import { WalletProvider } from '@solana/wallet-adapter-react'; 
+import { ConnectionProvider } from '@solana/wallet-adapter-react/node_modules/@solana/wallet-adapter-react'; 
+import { BitpieWalletAdapter, PhantomWalletAdapter } from '@solana/wallet-adapter-bitpie';
+import Wallet from '../components/Wallet'; 
 import 'globals.css';
 import 'app.css';
 import Head from 'next/head';
 import Link from 'next/link';
 
+const yourWallets = [
+  {
+    name: 'Bitpie',
+    url: 'https://www.bitpie.com/',
+    adapter: BitpieWalletAdapter,
+  },
+  {
+    name: 'Phantom',
+    url: 'https://phantom.app/',
+    adapter: PhantomWalletAdapter,
+  },
+  // Add more wallet configurations as needed
+];
+
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ConnectionProvider endpoint="https://devnet.helius-rpc.com/?api-key=68cbe250-e856-4a16-9088-e24b6a80f895"> {/* Replace with your Solana RPC endpoint */}
-      <WalletProvider wallets={yourWallets} autoConnect={true} disableDefaultWalletProvider={true}> {/* Replace yourWallets with your wallet configurations */}
+    <ConnectionProvider endpoint="https://devnet.helius-rpc.com/?api-key=68cbe250-e856-4a16-9088-e24b6a80f895">
+      <WalletProvider wallets={yourWallets} autoConnect={true} disableDefaultWalletProvider={true}>
         <div>
           <Head>
-            <title>Moonbirdz Marketplace</title>
+            <title>NAS ACADEMY MARKETPLACE</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <nav className='border-b p-6' style={{ background: '#03045E' }}>
-            <p className='text-4x1 font-bold text-white'>Moonbirdz Marketplace</p>
+            <p className='text-4x1 font-bold text-white'>NAS ACADEMY MARKETPLACE</p>
             <div className='flex mt-4 justify-center'>
               <Link href='/'>
                 <a className='mr-4'>
@@ -38,7 +53,7 @@ const MyApp = ({ Component, pageProps }) => {
                   Account Dashboard
                 </a>
               </Link>
-              <Wallet /> {/* Render the Solana wallet component */}
+              <Wallet />
             </div>
           </nav>
           <Component {...pageProps} />
