@@ -1,0 +1,139 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set a global font family and background color */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Create a container for the main content */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #03045E;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  /* Style the navigation menu */
+  .nav-menu {
+    background-color: #03045E;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Style links and buttons */
+  a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the main content area */
+  .main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style cards or items in a grid */
+  .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  /* Style images inside cards */
+  .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Style headings and text */
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+  
+  /* Add spacing utilities */
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  
+  .mr-4 {
+    margin-right: 1rem;
+  }
+  
+  /* Add responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .nav-menu {
+      padding: 5px 0;
+    }
+  
+    .nav-menu a {
+      margin: 0 10px;
+      font-size: 16px;
+    }
+  
+    .header h1 {
+      font-size: 28px;
+    }
+  
+    .card {
+      padding: 10px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,42 @@
+/* Dashboard Container */
+div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Welcome Message */
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Wallet Connection Buttons */
+  button {
+    background-color: #03045E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  /* Lists */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* NFT and Transaction History Items */
+  li {
+    font-size: 18px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
