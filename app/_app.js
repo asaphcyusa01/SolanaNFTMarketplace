@@ -18,7 +18,6 @@ const yourWallets = [
     url: 'https://phantom.app/',
     adapter: PhantomWalletAdapter,
   },
-  // Add more wallet configurations as needed
 ];
 
 const MyApp = ({ Component, pageProps }) => {
